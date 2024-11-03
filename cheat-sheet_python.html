@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Cheat Sheet</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #9b59b6;
+            margin-bottom: 20px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            height: 80vh;
+            overflow-y: scroll;
+            background-color: #2c3e50;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            padding: 20px;
+            margin-top: 20px; /* Space from the top */
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 5px solid #9b59b6;
+        }
+        pre {
+            background: #34495e;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Ensures long lines are wrapped */
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        @keyframes subtleGlow {
+            0% { text-shadow: 0 0 5px #9b59b6; }
+            50% { text-shadow: 0 0 15px #9b59b6; }
+            100% { text-shadow: 0 0 5px #9b59b6; }
+        }
+        .glow {
+            animation: subtleGlow 1.5s infinite alternate;
+        }
+        .hacker-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+        }
+        .ascii-animation {
+            font-family: monospace;
+            color: #9b59b6;
+            white-space: pre;
+            text-align: center;
+            font-size: 16px;
+            animation: bounce 0.5s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hacker-effect"></div>
+
+<div class="container">
+    <h1 class="glow">Python Cheat Sheet for Linux</h1>
+
+    <div class="section">
+        <h2>1. Create a Virtual Environment</h2>
+        <pre><code>python3 -m venv my_environment</code></pre>
+        <p>Creates a new virtual environment named <code>my_environment</code> in the current directory.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Activate the Virtual Environment</h2>
+        <pre><code>source my_environment/bin/activate</code></pre>
+        <p>This command activates the virtual environment. You should see the environment name in your terminal prompt.</p>
+    </div>
+
+    <div class="section">
+        <h2>3. Install Packages</h2>
+        <pre><code>pip install package_name</code></pre>
+        <p>Installs the specified package (e.g., Flask, Django) within the activated environment.</p>
+    </div>
+
+    <div class="section">
+        <h2>4. Check Installed Packages</h2>
+        <pre><code>pip list</code></pre>
+        <p>Displays a list of all packages installed in the current virtual environment.</p>
+    </div>
+
+    <div class="section">
+        <h2>5. Write a Simple Python Script</h2>
+        <pre><code>print("Hello, World!")</code></pre>
+        <p>This script outputs "Hello, World!" to the console when executed.</p>
+    </div>
+
+    <div class="section">
+        <h2>6. Run the Script</h2>
+        <pre><code>python script_name.py</code></pre>
+        <p>Executes the Python script specified by <code>script_name.py</code>. Ensure you are in the correct directory.</p>
+    </div>
+
+    <div class="section">
+        <h2>7. Create an HTML/CSS Interface</h2>
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My Python Script&lt;/h1&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+        <p>This basic HTML structure allows you to create a web interface for your Python script.</p>
+    </div>
+
+    <div class="section">
+        <h2>8. Link Python with HTML</h2>
+        <pre><code>
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template('index.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
+        </code></pre>
+        <p>This code creates a Flask application that serves the HTML page <code>index.html</code>.</p>
+    </div>
+
+    <div class="section">
+        <h2>9. Run the Flask Application</h2>
+        <pre><code>python app.py</code></pre>
+        <p>This command starts the Flask web server. Ensure your app is named <code>app.py</code>.</p>
+    </div>
+
+    <div class="section">
+        <h2>10. Access Your Web Application</h2>
+        <pre><code>http://localhost:5000</code></pre>
+        <p>Open this URL in your web browser to access your Flask application.</p>
+    </div>
+
+    <div class="section">
+        <h2>11. Handle Form Data in Flask</h2>
+        <pre><code>
+from flask import Flask, request
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    name = request.form.get("name")
+    return f"Hello, {name}!"
+        </code></pre>
+        <p>This snippet shows how to handle form submissions in Flask and greet the user.</p>
+    </div>
+
+    <div class="section">
+        <h2>12. Create a Basic HTML Form</h2>
+        <pre><code>
+&lt;form action="/submit" method="post"&gt;
+    &lt;input type="text" name="name" placeholder="Enter your name"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+        </code></pre>
+        <p>This HTML code creates a form to collect user input and submit it to the Flask server.</p>
+    </div>
+
+    <div class="section">
+        <h2>13. Install Flask</h2>
+        <pre><code>pip install Flask</code></pre>
+        <p>Installs the Flask web framework, enabling you to create web applications in Python.</p>
+    </div>
+
+    <div class="section">
+        <h2>14. Use Virtual Environments</h2>
+        <pre><code>deactivate</code></pre>
+        <p>Exits the virtual environment and returns to the system's Python environment.</p>
+    </div>
+
+    <div class="section">
+        <h2>15. Requirements File</h2>
+        <pre><code>pip freeze > requirements.txt</code></pre>
+        <p>Creates a <code>requirements.txt</code> file listing all installed packages in the current environment.</p>
+    </div>
+
+    <div class="section">
+        <h2>16. Install from Requirements File</h2>
+        <pre><code>pip install -r requirements.txt</code></pre>
+        <p>Installs all packages listed in the <code>requirements.txt</code> file.</p>
+    </div>
+
+    <div class="section">
+        <h2>17. Debugging Flask Applications</h2>
+        <pre><code>app.run(debug=True)</code></pre>
+        <p>Enables debug mode in Flask, allowing for easier troubleshooting during development.</p>
+    </div>
+
+    <div class="section">
+        <h2>18. Handle Static Files</h2>
+        <pre><code>
+@app.route("/static/<path:filename>")
+def static_files(filename):
+    return send_from_directory('static', filename)
+        </code></pre>
+        <p>This function allows you to serve static files like CSS and JavaScript in Flask.</p>
+    </div>
+
+    <div class="section">
+        <h2>19. Create a CSS File</h2>
+        <pre><code>
+&lt;link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"&gt;
+        </code></pre>
+        <p>This line in your HTML links to a CSS file located in the <code>static</code> folder.</p>
+    </div>
+
+    <div class="section">
+        <h2>20. Deploying Flask Applications</h2>
+        <pre><code>
+# Using gunicorn
+gunicorn -w 4 app:app
+        </code></pre>
+        <p>This command runs your Flask application using Gunicorn with 4 worker processes for production.</p>
+    </div>
+
+    <footer>
+        &copy; 2024 Python Cheat Sheet
+    </footer>
+</div>
+
+<div class="ascii-animation">
+    <p>  (•_•)  </p>
+
+    <p>  (⌐■_■)  </p>
+</div>
+
+<script>
+    // Subtle background effect
+    const hackerEffect = document.querySelector('.hacker-effect');
+    setInterval(() => {
+        hackerEffect.style.opacity = Math.random() * 0.5 + 0.25; // opacity between 0.25 and 0.75
+    }, 3000);
+</script>
+
+</body>
+</html>
